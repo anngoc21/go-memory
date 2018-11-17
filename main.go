@@ -10,27 +10,9 @@ import (
 	"encoding/json"
 )
 
-type Metadata struct {
-	Title  string  `json:"title"`
-	Images []Image `json:"images"`
-	Footer string  `json:"footer"`
-	BG     string  `json:"bg"`
-}
-
-type Image struct {
-	Id      string `json:"id"`
-	Caption string `json:"caption"`
-	Size    int    `json:"size"`
-	Thumb   string `json:"thumb"`
-	Big     string `json:"big"`
-	Index   int    `json:"index"`
-}
 
 var data = Metadata{Title: "Tôi có một nỗi buồn thật đẹp.", Images: []Image{}, Footer: "Tôi là An, đây là những kỷ niệm đẹp của tôi. Tôi sẽ không bao giờ quên.", BG: "images/bg.jpg"}
 
-type CustomValidator struct {
-	validator *validator.Validate
-}
 
 func (cv *CustomValidator) Validate(i interface{}) error {
 	return cv.validator.Struct(i)

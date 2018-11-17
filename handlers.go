@@ -21,11 +21,6 @@ func init() {
 
 }
 
-type UpdateRequest struct {
-	Caption string  `json:"caption" form:"caption" query:"caption" validate:"required"`
-	Title   *string `json:"title" form:"title" query:"title"`
-	Footer  *string `json:"footer" form:"footer" query:"footer"`
-}
 
 func DeleteImage(c echo.Context) error {
 	imageID := c.Param("image_id")
