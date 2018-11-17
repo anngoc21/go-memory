@@ -1,0 +1,71 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>{{.Title}}</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+    <link rel="stylesheet" href="assets/css/main.css"/>
+    <noscript>
+        <link rel="stylesheet" href="assets/css/noscript.css"/>
+    </noscript>
+</head>
+<body class="is-preload">
+<div id="wrapper">
+    <section id="main">
+        <div class="items">
+            <div class="item intro span-2">
+                <h1>An Nguyen</h1>
+                <p>{{.Title}}</p>
+            </div>
+        {{range .Images}}
+        {{if .Page == 1}}
+            <article class="item thumb span-{{.Size}}">
+                <h2>{{.Caption}}</h2>
+                <a href="{{.Full}}" class="image"><img src="{{.Thumb}}" alt="{{.Caption}}"/></a>
+            </article>
+        {{end}}
+        {{end}}
+        </div>
+        <div class="items">
+        {{range .Images}}
+        {{if .Page == 1}}
+            <article class="item thumb span-{{.Size}}">
+                <h2>{{.Caption}}</h2>
+                <a href="{{.Full}}" class="image"><img src="{{.Thumb}}" alt="{{.Caption}}"/></a>
+            </article>
+        {{end}}
+        {{end}}
+        </div>
+    </section>
+    <section id="footer">
+        <section>
+            <p>Tôi là <strong>An</strong>, đây là những kỷ niệm đẹp của tôi. Tôi sẽ không bao giờ quên.</p>
+        </section>
+        <section>
+            <ul class="icons">
+                <li><a target="_blank" href="https://twitter.com/anngoc7" class="icon fa-twitter"><span class="label">Twitter</span></a>
+                </li>
+                <li><a target="_blank" href="https://www.instagram.com/annguyen.ngoc/" class="icon fa-instagram"><span
+                        class="label">Instagram</span></a>
+                </li>
+                <li><a target="_blank" href="https://www.facebook.com/uy.sdfjk" class="icon fa-facebook"><span
+                        class="label">Facebook</span></a></li>
+                <li><a target="_blank" href="http://annguyen.com" class="icon fa-dribbble"><span
+                        class="label">Dribbble</span></a></li>
+                <li><a href="mailto:anngoc21@gmail.com" class="icon fa-envelope"><span class="label">Email</span></a>
+                </li>
+            </ul>
+            <ul class="copyright">
+                <li>&copy; annguyen</li>
+            </ul>
+        </section>
+    </section>
+</div>
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/jquery.poptrox.min.js"></script>
+<script src="assets/js/browser.min.js"></script>
+<script src="assets/js/breakpoints.min.js"></script>
+<script src="assets/js/util.js"></script>
+<script src="assets/js/main.js"></script>
+</body>
+</html>
