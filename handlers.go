@@ -181,6 +181,21 @@ func loadData() Metadata {
 
 	var result Metadata
 	json.Unmarshal([]byte(byteValue), &result)
+
+	var images []Image
+
+	for {
+		if len(result.Images) == 0 {
+			break
+		}
+		index := rand.Int() % len(result.Images)
+		result.Images[index].Size = rand.Int()%3 + 1
+		result.Images[index].Index = rand.Int()%2 + 1
+		images = append(images, result.Images[index])
+		result.Images[index] = result.Images [len(result.Images)-1] // Copy last element to index i
+		result.Images = result.Images [:len(result.Images)-1]       // Truncate slice
+	}
+	result.Images = images
 	data = result
 	return result
 }

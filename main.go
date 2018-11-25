@@ -40,5 +40,5 @@ func main() {
 	e.POST("/api/images", InsertImage)
 	e.DELETE("/api/images/:image_id", DeleteImage)
 
-	e.Logger.Fatal(e.Start(":8000"))
+	e.Logger.Fatal(e.Start(":80"))
 }
